@@ -1,0 +1,73 @@
+#Done
+comprimentar:
+    - comprimentar de dia*
+    - comprimentar de tarde*
+    - comprimentar de noite*
+    - comprimentar de forma genérica*
+
+#Done
+humor:
+    bom humor:
+        - dizer que esta bem
+        - dizer que esta muito bem
+    mau humor:
+        - dizerque esta mal
+        - dizerque esta péssimo
+    
+#Done
+satisfação:
+    boa_satisfacao:
+    - quanto ao atendimento
+    - quanto ao produto comprado
+    
+    ma_satisfacao:
+    - quanto ao atendimento
+    - quanto ao produto comprado
+
+#Done
+fora_do_escopo:
+    - conversas sobre jogo
+    - conversas sobre casa do cliente
+    - conversas sobre a vida do cliente
+    - conversas sobre o clima
+    - conversas sobre sobre o país
+    - conversas sobre televisão
+    - perguntar o nome do bot
+
+#Done
+chitchat:
+    - capacidades
+    - confirmar presença
+    - agradecer
+    - despedir
+
+
+#Done
+duvidas:
+    - duvidas sobre métodos de pagamento
+    - duvidas sobre localização física
+    - duvidas sobre descontos
+    - duvidas sobre promoções
+    - duvidas sobre encomenda
+    - duvidas sobre como funciona o fluxo de atendimento
+    - duvidas sobre garantia
+    - duvidas sobre cor de um produto
+    - duvidas sobre qualidade do produto
+    - duvidas sobre o custo de um produto
+    - duvidas sobre o carrinho de produtos adicionados
+    # - duvidas sobre novos produtosj
+    - duvidas sobre 
+
+informar:
+    - informar o contacto de M-pesa/E-mola
+    - informar localização
+    - informar o nome
+    - informar a remoção de um produto no carrinho
+    - informar o checkout
+
+#Done
+pedir:
+    - pedir um produto
+
+explicacao_de_uso:
+feedback:

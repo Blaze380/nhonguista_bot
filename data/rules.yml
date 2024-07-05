@@ -2,12 +2,85 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: respond to FAQs
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: faq
+  - action: utter_faq
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: respond to chitchat
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: chitchat
+  - action: utter_chitchat
+
+- rule: respond to greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+
+# - rule: respond to custom
+#   steps:
+#   - intent: custom
+#   - action: utter_custom
+
+- rule: respond to satisfaction
+  steps:
+  - intent: satisfaction
+  - action: utter_satisfaction
+
+- rule: respond to out_of_scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+
+- rule: respond to mood
+  steps:
+  - intent: mood
+  - action: utter_mood
+
+- rule: respond to order
+  steps:
+  - intent: order
+  - action: utter_order
+
+- rule: respond to order product
+  steps:
+  - intent: order/product
+  - slot_was_set:
+    - product: 'sapatos'
+  - action: utter_order/product
+
+
+- rule: respond to faq/product_cost
+  steps:
+  - intent: faq/product_cost
+  - slot_was_set:
+    - product: "calças"
+  - action: utter_faq/product_cost
+
+- rule: respond to inform/delivery_address
+  steps:
+  - intent: inform/delivery_address
+  - slot_was_set:
+    - location: 'gaza'
+  - action: utter_inform/delivery_address
+
+- rule: respond to inform/phone_number
+  steps:
+  - intent: inform/phone_number
+  - slot_was_set:
+    - phone_number: '857483995'
+  - action: utter_inform/phone_number
+
+
+# - rule: respond to inform/name
+#   steps:
+#   - intent: inform/name
+#   - slot_was_set:
+#     - name: 'blaze'
+#   - action: utter_inform/name
+
+
+
