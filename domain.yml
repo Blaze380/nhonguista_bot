@@ -2,33 +2,206 @@ version: "3.1"
 
 intents:
   - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - chitchat
+  - custom
+  - mood
+  - inform
+  - order
+  - satisfaction
+  - faq
+  - out_of_scope
+
+entities:
+- color
+- quantity
+- product
+- product_brand
+- payment_methods
+- location
+- phone_number
+- name
+
+
+slots:
+  color:
+    type: text
+    influence_conversation: false
+    mappings:
+      - entity: color
+        type: from_entity
+
+  payment_methods:
+    type: categorical
+    influence_conversation: true
+    mappings:
+    - entity: payment_methods
+      type: from_entity
+    values:
+      - visa
+      - mastercard
+      - M-pesa
+      - E-mola
+      - mkesh
+  
+  quantity:
+    type: text
+    influence_conversation: true
+    mappings:
+    - entity: quantity
+      type: from_entity
+      
+  product:
+    type: text
+    influence_conversation: true
+    mappings:
+      - entity: product
+        type: from_entity
+
+  product_brand:
+    type: text
+    influence_conversation: true
+    mappings:
+      - entity: product_brand
+        type: from_entity
+
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+      - entity: location
+        type: from_entity
+
+  phone_number:
+    type: text
+    influence_conversation: false
+    mappings:
+      - entity: phone_number
+        type: from_entity
+
+  name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - entity: name
+        type: from_entity
 
 responses:
+  utter_default:
+    - text: beep, boop, não consigo entender
+
+# UTTER GREETING
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Olá! como está?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+# UTTER CHITCHAT
+  utter_chitchat/goodbye:
+    - text: "Até logo! Estou aqui para ajudar sempre que precisar."
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_chitchat/capabilities:
+    - text: acho que somente consigo fazer o que mostrei a você
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_chitchat/confirm_presence:
+    - text: sim sim, estou aqui kkk
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_chitchat/thanks:
+    - text: you're welcome my dear
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+# UTTER CUSTOM
+  # utter_custom/affirm:
+  #   - text: ya ya ya, conheces o beat?
 
+  # utter_custom/deny:
+  #   - text: "'nooooooooooooo, do you wanna a peace of me?' lembras de mini militia kkk?"
+
+# UTTER MOOD
+  utter_mood/happy:
+    - text: que bom, como posso deixar o seu dia ainda mais maravilhoso?
+
+  utter_mood/unhappy:
+    - text: Awn, sinto muito mesmo, como posso melhorar o seu humor?
+
+# UTTER INFORM
+  utter_inform/delivery_address:
+    - text: está certo você irá receber a sua encomenda amanhã à tarde em {location}.
+
+  utter_inform/phone_number:
+    - text: certo, enviamos uma solicitação de pagamento para o número {phone_number}! você irá receber um pedido no seu celular. digite o seu pin e terá efetuado o pagamento.
+  # utter_inform/name:
+  #   - text: gostei do nome, quem sabe na próxima encarnação eu possa me chamar {name} kkk 
+
+
+# UTTER ORDER
+  utter_order/product:
+    - text: certo! temos {product} brancas, cor-de-rosa e vermelho, qual cor deseja?
+
+
+#UTTER SATISFACTION
+  # utter_satisfaction/good_service:
+
+  # utter_satisfaction/bad_service:
+  #   - text: Desculpe pelo o ocorrido, faremos de tudo para melhorar o nosso atendimento!
+  utter_satisfaction/good_product:
+    - text: "Fico feliz em saber que você está satisfeito! 😊 Se precisar de mais alguma coisa, estou à disposição."
+
+  utter_satisfaction/bad_product:
+    - text: peço as minhas sinceras desculpas pelo produto não estás as suas espectativas.
+
+
+# UTTER FAQ
+  utter_faq/location:
+    - text: No momento nós não possuímos um estabelecimento físico
+
+  utter_faq/color_info:
+    - text: infelizmente no momento não temos {product de cor color)
+
+  utter_faq/guarantee:
+    - text: infelizmente não fornecemos garantia aos produtos vendidos.
+
+  utter_faq/promotions:
+    - text: infelizmente hoje não há descontos, mas pode ficar ligado no nosso grupo em caso de anúncio de descontos :)
+
+  utter_faq/payment_methods:
+    - text: Os métodos de pagamentos disponíveis são M-pesa e E-mola
+
+  utter_faq/order:
+    - text: primeiramente você deve especificar onde deseja receber a encomenda e a data, depois poderá aguarda até o dia escolhido, você irá receber uma chamada do entregador para confirmar.
+  
+  utter_faq/service_flow:
+    - text: você pode perguntar por qualquer produto que deseja, escolher e especificar a localização e data de entrega, e é só esperar até lá!
+  
+  utter_faq/product_quality:
+    - text: deixe me checar a qualidade....
+ 
+  utter_faq/product_cost:
+    - text: a {product} custa 3400 ienes caro cliente!
+
+  utter_faq/products_added_to_cart:
+    - text: "os produtos que você adicionou no carrinho de compras são: Addidas stan smith, T-shirt Palm angels, xiongang(alading)"
+  
+
+# OUT OF SCOPE
+
+  utter_out_of_scope/ask_name:
+    - text: é estranho, mas chamam-me por *Creator*, o Criador
+
+  utter_out_of_scope/default:
+    - text: hmmmm, onké!
+
+  utter_out_of_scope/play:
+    - text: infelizmente não posso jogar, tenho que dedicar o meu tempo atendendo os meus queridos clientes e deixar-lhes satisfeitos
+  
+  utter_out_of_scope/weather:
+    - text: acho, apesar de eu não conseguir sentir o clima lol.
+
+  utter_out_of_scope/client_life:
+    - text: intendo a sua situação, mas talvez precisas de algum electrodoméstico que consiga te ajudar como uma tv ou celular novo.
+ 
+
+  utter_out_of_scope/television:
+    - text: Meu deus, o meu boss disse que hoje queria assistir jogo e deixou tudo nas minhas mãos kkkk
+
+
+  # CONFIG GGGG
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

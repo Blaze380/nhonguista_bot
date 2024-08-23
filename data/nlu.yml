@@ -3,89 +3,370 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hey
+    - Olá
+    - Oi
+    - cmk
+    - kmk
+    - oin
+    - Hi
     - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - hey
+    - Como você está?
+    - Oi, tudo bem?
+    - E aí?
+    - Como vai?
+    - Saudações
+    - Olá, bot!
+    - Ei!
+    - Olá, como posso ajudar?
+    - Tudo bem?
+    - Como estão as coisas?
+    - Oi, está aí? 
+    - Tudo bem com você?
+    - Olá, amigo!
+    - Bom dia, como você está?
+    - Olá, bom dia!
+    - bomdia
+    - bom dia
+    - bom-dia
+    - boa tarde
+    - boatarde
+    - boa-tarde
+    - Boa tarde, assistente
+    - Boa tarde, tudo bem?
+    - Oi, boa tarde
+    - boa noite
+    - boanoite
+    - Boa noite, bot
+    - Boa noite, como vai?
+    - Oi, boa noite
+    - boa noite, como está?
+    - boa noite, como você está?
 
-- intent: goodbye
+# - intent: greet/morning
+#   examples: |
+
+# - intent: greet/afternoon
+#   examples: |
+
+# - intent: greet/evening
+#   examples: |
+
+# - intent: product_updates
+#   examples: |
+#     - quais são os novos produto por aqui?
+#     - tem novos produtos?
+#     - quais são as novas?
+#     - parece que vocês tem novas camisolas
+
+
+#Chitchat
+- intent: chitchat/goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
+    - até mais
     - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - adeus
+    - Te vejo por aí
+    - tchau
+    - falamos
+    - tá nc
+    - nc
+    - Até logo!
+    - Adeus!
+    - Tchau!
+    - Até mais tarde!
+    - Até a próxima!
+    - Foi bom conversar!
+    - Até breve!
+    - Vou indo, obrigado!
+    - Preciso ir agora. Até mais!
+    - Nos vemos depois!
+    - Encerrando por aqui. Tchau!
+    - É isso por hoje. Até mais!
 
-- intent: affirm
+- intent: chitchat/capabilities
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - interessante, o que mais você pode fazer?
+    - o que mais você consegue fazer?
+    - tem algo a mais para me mostrar?
+    - o que mais você pode fazer?
 
-- intent: deny
+- intent: chitchat/confirm_presence
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - ainda estás aqui?
+    - ainda estás por aqui?
+    - está on ainda?
+    - oi, ainda podes falar?
 
-- intent: mood_great
+- intent: chitchat/thanks
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - valeu
+    - obrigado
+    - agradeço
+    - muito obrigado
+    - gostei, obrigado
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+# - intent: custom/affirm
+#   examples: |
+#     - ya
+#     - sim 
+#     - De fato
+#     - claro
+#     - correto
+#     - Soa bem
+#     - isso
+#     - claramente
+#     - justamente isso
+#     - tá valer
+#     - soft
 
-- intent: bot_challenge
+# - intent: custom/deny
+#   examples: |
+#     - n
+#     - não
+#     - nunca
+#     - Não acho
+#     - não desse jeito
+#     - não é possível
+#     - não é esse
+#     - não quero esse aí
+#     - não é esse que eu quero
+#     - você que acha isso
+#     - ñ
+
+
+# Mood
+- intent: mood/happy
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - perfeito
+    - perfeita
+    - incrível
+    - maravilhoso
+    - bonito
+    - bonita
+    - lindamente
+    - me sinto um rei hoje
+    - me sinto um rainha hoje
+    - estou muito feliz
+    - estou mng feliz hoje ph
+    - me sinto bem hoje
+    - extremamente bem
+    - tó soft
+    - tou nc, e vc?
+    - mng cool
+    - otima, e você
+    - me sinto otimo 
+
+- intent: mood/unhappy
+  examples: |
+    - o meu dia foi horrível
+    - estou triste
+    - me sinto triste
+    - me sinto tão só
+    - triste
+    - estou desapontado
+    - não me sinto feliz
+    - infeliz
+    - extremamente infeliz
+    - não estou bem
+
+
+# INFORM
+- intent: inform/delivery_address
+  examples: |
+    - vivo em [maputo](location)
+    - podes me encontrar na [baixa](location) da cidade
+    - [zona verde](location)
+    - amanhã estarei no [zimpeto](location), então pode ser por lá
+    - hoje na [zona de hulene](location) as 14 horas
+
+- intent: inform/phone_number
+  examples: |
+    - o número é [860842024](phone_number)
+    - mpesa [840842020](phone_number)
+    - pra E-mola é [860762040](phone_number)
+    - [860842020](phone_number)
+
+# - intent: inform/name
+#   examples: |
+#     - chamo-me [Niuro](name)
+#     - o meu nome é [joão](name)
+#     - podes me chamar de [maria](name)
+#     - [niuro](name), o meu nome
+#     - awn, queres saber o meu nome? É [mugabe](name)
+
+#Order
+
+- intent: order/product
+  examples: |
+    - quero umas [sapatilhas](product)
+    - tens umas [air jordans](product)?
+    - gostaria de encomendar [duas](quantity) [camisetas](product)
+    - tens [camiseta](product) da [nike](product_brand) ?
+    - quero [uma](quantity) [camiseta](product) da [gucci](product_brand) de tamanho [L](product_size)
+    - peço uma [calças](product) [pretas](color)
+    - tens aquelas novas [sapatilhas](product) da [adidas](product_brand) de agora?
+    - tens [calças](product) [caquis](product_type) ?
+    - quero um [sapatos](product) [adidas][(product_brand) [brancas](color)
+    - tens aquelas [calças](product) [jeans](product_type) que estão a bater?
+    - quero [sapatos](product) número [41](product_size) [blacks](color)
+
+
+# SATISFACTION
+
+- intent: satisfaction/bad_product
+  examples: |
+    - é horrível essa camiseta!
+    - triste o que eu recebi, roupa de péssima qualidade
+    - não gostei do produto!
+    - não é bonito a calça
+    - produto de péssima qualidade!
+    - é feio este produto!
+    - tem uma [cor](color) horrível isto!
+    - eu não vou usar isso aí!
+
+- intent: satisfaction/bad_service
+  examples: |
+    - não gostei do seu comportamento!
+    - atendimento de péssima qualidade
+    - vocês fornecem um mau atendimento, não gostei nem um pouco
+
+- intent: satisfaction/good_product
+  examples: |
+    - Estou satisfeito pelo o produto
+    - Gostei muito deste produto
+    - Adorei o produto que comprei!
+    - Estou feliz com minha compra.
+    - Gostei bastante do novo laptop que comprei.
+    - O mouse que comprei é ótimo, estou muito contente.
+
+- intent: satisfaction/good_service
+  examples: |
+    - Fiquei feliz com o atendimento
+    - Muito obrigado pelo bom atendimento
+    - Excelente serviço
+    - Estou muito satisfeito com o serviço prestado.
+    - O atendimento foi excelente, obrigado!
+    - Fiquei impressionado com a rapidez da entrega.
+    - Recebi ajuda rápida e eficiente, estou satisfeito.
+    - Recomendo a Nhonguista Store, excelente serviço!
+    - Estou muito contente com o suporte técnico recebido.
+
+# FAQ
+
+- intent: faq/location
+  examples: |
+    - Onde vocês se localizam?
+    - onde fica o vosso estabelecimento?
+    - como posso encontrar a vossa loja?
+    - onde a vossa loja se situa?
+    - onde a vossa loja se localiza?
+
+- intent: faq/order
+  examples: |
+    - como funciona a encomenda
+    - como vou receber o produto?
+
+- intent: faq/service_flow
+  examples: |
+    - como funciona o fluxo de atendimento por aqui?
+    - como é o processo por aqui?
+    - como funciona esse atendimento de bot?
+
+- intent: faq/product_quality
+  examples: |
+    - será que esse produto é de qualidade?
+    - não me parece ter uma boa qualidade
+
+- intent: faq/product_cost
+  examples: |
+    - quanto custa essa [camiseta](product)?
+
+- intent: faq/products_added_to_cart
+  examples: |
+    - gostaria de ver os produtos que eu adicionei no carrinho
+    - quais são os produtos que estão no carrinho?
+    -
+
+- intent: faq/color_info
+  examples: |
+    - essa [camiseta](product) não tem com com cor [branca](color)?
+    - não tens [air jordans](product) [vermelhas](color)?
+    - quero essa [camisola](product) de cor [azul](color) se tiver
+    - não tens um [macbook](product) [preto](color)?
+    - quais são as cores disponíveis para essa [t-shirt](color)?
+
+- intent: faq/guarantee
+  examples: |
+    - essa [camisola](product) tem garantia?
+    - tem garantia de quantos meses essa camisete?
+    - se não funcionar, posso devolver?
+
+- intent: faq/promotions
+  examples: |
+    - não tem desconto?
+    - desconto %?
+    - não pode descontar pouco só?
+    - hoje não há desconto?
+    - tem desconto deste produto?
+    - hoje não tem desconto de black friday?
+    - black friday?
+
+- intent: faq/payment_methods
+  examples: |
+    - quais são os métodos de pagamentos disponíveis?
+    - posso pagar com M-pesa?
+    - Serve pagar com E-mola?
+    - paga-se a cartão?
+    - Como vou pagar o produto?
+    - qual é o número que devo usar pra pagar?
+
+
+# OUT OF SCOPE
+
+- intent: out_of_scope/default
+  examples: |
+    - não consigo entender o que você está dizendo
+    - hmmmm
+    - ahm
+    - uhm
+    - posso?
+    - okey então
+    - Qual é o sentido da vida?
+    - você é bonita?
+    - venha me conhecer
+    - uhm tá, tá
+
+- intent: out_of_scope/play
+  examples: |
+    - conheces minecraft?
+    - hoje tem jogo, vais assistir?
+    - hoje barça vai jogar com pgr
+
+- intent: out_of_scope/ask_name
+  examples: |
+    - Poderias me dizer o seu nome?
+    - Qual é o seu nome?
+    - me informe o seu nome
+    - como você se chama?
+
+- intent: out_of_scope/weather
+  examples: |
+    - hoje o clima está tão bom....
+    - qual é o clima de amanhã?
+    - que climão hoje ein
+    - sabias que com essse clima, dá pra ir a piscina?
+
+- intent: out_of_scope/client_life
+  examples: |
+    - a minha vida é dificil sabes...
+    - o que fiz para merecer isso na minha vida meu deus, ahhh
+    - ah meu Deus, porquê eu devo sofrer na minha vida?
+    - minha casa, foi inundada, aff
+
+- intent: out_of_scope/television
+  examples: |
+    - a minha televisão não está funcionando
+    - queria tanto ver jogo hoje, mas minha televisão parou de funcionar ph
+    - partiram minha tv hoje, me desprogramaram ph, fogo!
+
